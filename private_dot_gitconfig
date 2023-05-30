@@ -1,0 +1,28 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Fred Nixon
+	email = john@johnfnixon.com
+# Set up git-delta
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[add.interactive]
+	useBuiltin = false
+[delta]
+	navigate = true # use n and N to move
+	light = false
+	side-by-side = true
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+
+[alias]
+	co = checkout
+	br = branch
+	s = status
+	st = status -sb
+	last = log -1 HEAD
+	added = diff --cached --name-only
+	today = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
